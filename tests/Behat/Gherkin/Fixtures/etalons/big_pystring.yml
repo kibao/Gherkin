@@ -8,9 +8,10 @@ feature:
       line:     2
       steps:
         -
-          type:   Then
-          text:   it should fail with:
-          line:   3
+          type:    Then
+          keyword: Then
+          text:    it should fail with:
+          line:    3
           arguments:
             -
               type:     pystring

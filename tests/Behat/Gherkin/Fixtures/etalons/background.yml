@@ -7,7 +7,7 @@ feature:
   background:
     line:       3
     steps:
-      - { type: Given, text: a passing step, line: 4 }
+      - { type: Given, keyword: Given, text: a passing step, line: 4 }
 
   scenarios:
     -
@@ -15,4 +15,4 @@ feature:
       title:    ~
       line:     6
       steps:
-        - { type: Given, text: a failing step, line: 7 }
+        - { type: Given, keyword: Given, text: a failing step, line: 7 }

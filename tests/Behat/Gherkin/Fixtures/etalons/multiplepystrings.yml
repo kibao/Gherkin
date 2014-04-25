@@ -12,6 +12,7 @@ feature:
       steps:
         -
           type:       When
+          keyword:    When
           text:       I enter a string
           line:       4
           arguments:
@@ -29,6 +30,7 @@ feature:
 
         -
           type:       Then
+          keyword:    Then
           text:       String must be
           line:       15
           arguments:

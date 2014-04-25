@@ -16,6 +16,6 @@ feature:
       line:     7
       steps:
         - { type: Given, keyword: 'Допустим', text: 'я ввожу число 50',                   line: 8 }
-        - { type: And,   keyword: 'И',        text: 'затем ввожу число 70',               line: 9 }
+        - { type: Given, keyword: 'И',        text: 'затем ввожу число 70',               line: 9 }
         - { type: Then,  keyword: 'Если',     text: 'я нажимаю "+"',                      line: 10 }
         - { type: When,  keyword: 'То',       text: 'результатом должно быть число 120',  line: 11 }

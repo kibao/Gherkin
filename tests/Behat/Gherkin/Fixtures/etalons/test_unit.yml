@@ -13,6 +13,6 @@ feature:
       title:    assert_equal
       line:     6
       steps:
-        - { type: 'Given',  text: 'x = 5',                    line: 7 }
-        - { type: 'And',    text: 'y = 5',                    line: 8 }
-        - { type: 'Then',   text: 'I can assert that x == y', line: 9 }
+        - { type: 'Given', keyword: 'Given', text: 'x = 5',                    line: 7 }
+        - { type: 'Given', keyword: 'And',   text: 'y = 5',                    line: 8 }
+        - { type: 'Then',  keyword: 'Then',  text: 'I can assert that x == y', line: 9 }

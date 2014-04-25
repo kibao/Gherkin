@@ -317,7 +317,7 @@ class Parser
             $node = $this->parseExpression();
 
             if ($node instanceof StepNode) {
-                $steps[] = $node;
+                $steps[] = $this->fixStepNodeType($node, $steps);
                 continue;
             }
 
@@ -374,7 +374,7 @@ class Parser
             $node = $this->parseExpression();
 
             if ($node instanceof StepNode) {
-                $steps[] = $node;
+                $steps[] = $this->fixStepNodeType($node, $steps);
                 continue;
             }
 
@@ -432,7 +432,7 @@ class Parser
             $node = $this->parseExpression();
 
             if ($node instanceof StepNode) {
-                $steps[] = $node;
+                $steps[] = $this->fixStepNodeType($node, $steps);
                 continue;
             }
 
@@ -669,5 +669,31 @@ class Parser
         }
 
         return $this->parseExpression();
+    }
+
+    /**
+     * Changes step node type for types But, And to type of previous step if it exists else sets to Given
+     *
+     * @param StepNode $node
+     * @param array $steps
+     * @return StepNode
+     */
+    protected function fixStepNodeType(StepNode $node, array $steps = array())
+    {
+        if (in_array($node->getType(), array('And', 'But'))) {
+            if (($prev = end($steps))) {
+                $type = $prev->getType();
+            } else {
+                $type = 'Given';
+            }
+            $node = new StepNode(
+                $type,
+                $node->getKeyword(),
+                $node->getText(),
+                $node->getArguments(),
+                $node->getLine()
+            );
+        }
+        return $node;
     }
 }

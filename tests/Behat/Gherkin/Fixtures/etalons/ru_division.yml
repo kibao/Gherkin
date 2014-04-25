@@ -15,7 +15,7 @@ feature:
       line:     6
       steps:
         - { type: Given, keyword: 'Допустим', text: 'я ввожу число <делимое>',                  line: 7 }
-        - { type: And,   keyword: 'И',        text: 'затем ввожу число <делитель>',             line: 8 }
+        - { type: Given, keyword: 'И',        text: 'затем ввожу число <делитель>',             line: 8 }
         - { type: Then,  keyword: 'Если',     text: 'я нажимаю "/"',                            line: 9 }
         - { type: When,  keyword: 'То',       text: 'результатом должно быть число <частное>',  line: 10 }
 

@@ -11,9 +11,10 @@ feature:
       line:     3
       steps:
         -
-          type:   Then
-          text:   I should see
-          line:   4
+          type:    Then
+          keyword: Then
+          text:    I should see
+          line:    4
           arguments:
             -
               type:     pystring

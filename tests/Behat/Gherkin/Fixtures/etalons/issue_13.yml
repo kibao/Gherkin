@@ -13,9 +13,10 @@ feature:
       line:     4
       steps:
         -
-          type: Given
-          text: the pystring is
-          line: 7
+          type:    Given
+          keyword: Given
+          text:    the pystring is
+          line:    7
           arguments:
             -
               type: pystring
@@ -32,10 +33,10 @@ feature:
       line:     14
       steps:
         -
-          type: Given
-          text: the pystring is
-          line: 17
-          arguments:
+          type:    Given
+          keyword: Given
+          text:    the pystring is
+          line:    17
           arguments:
             -
               type: pystring
