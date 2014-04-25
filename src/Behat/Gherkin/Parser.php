@@ -491,6 +491,7 @@ class Parser
         $token = $this->expectTokenType('Step');
 
         $type = $token['value'];
+        $keyword = $token['keyword'];
         $text = trim($token['text']);
         $line = $token['line'];
 
@@ -508,7 +509,7 @@ class Parser
             }
         }
 
-        return new StepNode($type, $text, $arguments, $line);
+        return new StepNode($type, $keyword, $text, $arguments, $line);
     }
 
     /**

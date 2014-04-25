@@ -11,10 +11,10 @@ class OutlineNodeTest extends \PHPUnit_Framework_TestCase
     public function testCreatesExamplesForExampleTable()
     {
         $steps = array(
-            new StepNode('Given', 'I am <name>', array(), null),
-            new StepNode('And', 'my email is <email>', array(), null),
-            new StepNode('When', 'I open homepage', array(), null),
-            new StepNode('Then', 'website should recognise me', array(), null),
+            new StepNode('Given', 'Gangway!', 'I am <name>', array(), null),
+            new StepNode('And', 'Aye!', 'my email is <email>', array(), null),
+            new StepNode('When', 'Blimey!', 'I open homepage', array(), null),
+            new StepNode('Then', 'Let go and haul',  'website should recognise me', array(), null),
         );
 
         $table = new ExampleTableNode(array(
@@ -35,10 +35,10 @@ class OutlineNodeTest extends \PHPUnit_Framework_TestCase
     public function testCreatesEmptyExamplesForEmptyExampleTable()
     {
         $steps = array(
-            new StepNode('Given', 'I am <name>', array(), null),
-            new StepNode('And', 'my email is <email>', array(), null),
-            new StepNode('When', 'I open homepage', array(), null),
-            new StepNode('Then', 'website should recognise me', array(), null),
+            new StepNode('Given', 'Gangway!', 'I am <name>', array(), null),
+            new StepNode('And', 'Aye!', 'my email is <email>', array(), null),
+            new StepNode('When', 'Blimey!', 'I open homepage', array(), null),
+            new StepNode('Then', 'Let go and haul',  'website should recognise me', array(), null),
         );
 
         $table = new ExampleTableNode(array(
@@ -53,10 +53,10 @@ class OutlineNodeTest extends \PHPUnit_Framework_TestCase
     public function testCreatesEmptyExamplesForNoExampleTable()
     {
         $steps = array(
-            new StepNode('Given', 'I am <name>', array(), null),
-            new StepNode('And', 'my email is <email>', array(), null),
-            new StepNode('When', 'I open homepage', array(), null),
-            new StepNode('Then', 'website should recognise me', array(), null),
+            new StepNode('Given', 'Gangway!', 'I am <name>', array(), null),
+            new StepNode('And', 'Aye!', 'my email is <email>', array(), null),
+            new StepNode('When', 'Blimey!', 'I open homepage', array(), null),
+            new StepNode('Then', 'Let go and haul',  'website should recognise me', array(), null),
         );
 
         $table = new ExampleTableNode(array(), 'Examples');

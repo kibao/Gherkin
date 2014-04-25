@@ -190,6 +190,7 @@ class ArrayLoader implements LoaderInterface
     protected function loadStepHash(array $hash, $line = 0)
     {
         $type = isset($hash['type']) ? $hash['type'] : 'Given';
+        $keyword = isset($hash['keyword']) ? $hash['keyword'] : $type;
         $text = $hash['text'];
         $line = isset($hash['line']) ? $hash['line'] : $line;
 
@@ -204,7 +205,7 @@ class ArrayLoader implements LoaderInterface
             }
         }
 
-        return new StepNode($type, $text, $arguments, $line);
+        return new StepNode($type, $keyword, $text, $arguments, $line);
     }
 
     /**

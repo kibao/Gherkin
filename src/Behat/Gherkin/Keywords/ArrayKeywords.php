@@ -197,4 +197,29 @@ class ArrayKeywords implements KeywordsInterface
 
         return $this->keywordString[$this->language];
     }
+
+    /**
+     * Returns step type keyword (Given, When, Then, etc.).
+     *
+     * @param string $native Step keyword in provided language
+     * @return string
+     */
+    public function getStepKeywordType($native)
+    {
+        $keywordTypes = array(
+            'Given' => explode('|', $this->getGivenKeywords()),
+            'When' => explode('|', $this->getWhenKeywords()),
+            'Then' => explode('|', $this->getThenKeywords()),
+            'And' => explode('|', $this->getAndKeywords()),
+            'But' => explode('|', $this->getButKeywords())
+        );
+
+        foreach ($keywordTypes as $type => $keywords) {
+            if (FALSE !== array_search($native, $keywords) || FALSE !== array_search($native . '<', $keywords)) {
+                return $type;
+            }
+        }
+
+        return 'Given';
+    }
 }

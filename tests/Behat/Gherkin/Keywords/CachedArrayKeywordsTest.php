@@ -19,7 +19,7 @@ class CachedArrayKeywordsTest extends KeywordsTest
         return include(__DIR__ . '/../../../../i18n.php');
     }
 
-    protected function getSteps($keywords, $text, &$line)
+    protected function getSteps($type, $keywords, $text, &$line)
     {
         $steps = array();
         foreach (explode('|', $keywords) as $keyword) {
@@ -27,7 +27,7 @@ class CachedArrayKeywordsTest extends KeywordsTest
                 $keyword = mb_substr($keyword, 0, -1);
             }
 
-            $steps[] = new StepNode($keyword, $text, array(), $line++);
+            $steps[] = new StepNode($type, $keyword, $text, array(), $line++);
         }
 
         return $steps;

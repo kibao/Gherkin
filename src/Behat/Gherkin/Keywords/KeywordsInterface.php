@@ -100,4 +100,12 @@ interface KeywordsInterface
      * @return string
      */
     public function getStepKeywords();
+
+    /**
+     * Returns step type keyword (Given, When, Then, etc.).
+     *
+     * @param string
+     * @return string
+     */
+    public function getStepKeywordType($keyword);
 }

@@ -172,11 +172,12 @@ class ExampleNode implements ScenarioInterface
         $steps = array();
         foreach ($this->outlineSteps as $outlineStep) {
             $type = $outlineStep->getType();
+            $keyword = $outlineStep->getKeyword();
             $text = $this->replaceTextTokens($outlineStep->getText());
             $args = $this->replaceArgumentsTokens($outlineStep->getArguments());
             $line = $outlineStep->getLine();
 
-            $steps[] = new StepNode($type, $text, $args, $line);
+            $steps[] = new StepNode($type, $keyword, $text, $args, $line);
         }
 
         return $steps;

@@ -26,6 +26,10 @@ class StepNode implements NodeInterface
     /**
      * @var string
      */
+    private $keyword;
+    /**
+     * @var string
+     */
     private $text;
     /**
      * @var ArgumentInterface[]
@@ -40,22 +44,24 @@ class StepNode implements NodeInterface
      * Initializes step.
      *
      * @param string              $type
+     * @param string              $keyword
      * @param string              $text
      * @param ArgumentInterface[] $arguments
      * @param integer             $line
      */
-    public function __construct($type, $text, array $arguments, $line)
+    public function __construct($type, $keyword, $text, array $arguments, $line)
     {
         if (count($arguments) > 1) {
             throw new NodeException(sprintf(
                 'Steps could have only one argument, but `%s %s` have %d.',
-                $type,
+                $keyword,
                 $text,
                 count($arguments)
             ));
         }
 
         $this->type = $type;
+        $this->keyword = $keyword;
         $this->text = $text;
         $this->arguments = $arguments;
         $this->line = $line;
@@ -79,6 +85,16 @@ class StepNode implements NodeInterface
     public function getType()
     {
         return $this->type;
+    }
+
+    /**
+     * Returns step keyword in provided language (Given, When, Then, etc.).
+     *
+     * @return string
+     */
+    public function getKeyword()
+    {
+        return $this->keyword;
     }
 
     /**

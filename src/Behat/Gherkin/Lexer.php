@@ -411,7 +411,11 @@ class Lexer
             return null;
         }
 
-        $token = $this->takeToken('Step', trim($matches[1]));
+        $keyword = trim($matches[1]);
+        $type = $this->keywords->getStepKeywordType($keyword);
+
+        $token = $this->takeToken('Step', $type);
+        $token['keyword'] = $keyword;
         $token['text'] = $matches[2];
 
         $this->consumeLine();

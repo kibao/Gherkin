@@ -21,7 +21,7 @@ class CucumberKeywordsTest extends KeywordsTest
         return Yaml::parse(__DIR__ . '/../Fixtures/i18n.yml');
     }
 
-    protected function getSteps($keywords, $text, &$line)
+    protected function getSteps($type, $keywords, $text, &$line)
     {
         $steps = array();
         foreach (explode('|', mb_substr($keywords, 2)) as $keyword) {
@@ -29,7 +29,7 @@ class CucumberKeywordsTest extends KeywordsTest
                 $keyword = mb_substr($keyword, 0, -1);
             }
 
-            $steps[] = new StepNode($keyword, $text, array(), $line++);
+            $steps[] = new StepNode($type, $keyword, $text, array(), $line++);
         }
 
         return $steps;
